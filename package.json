@@ -1,0 +1,12 @@
+{
+  "name": "copio-landing",
+  "version": "1.0.0",
+  "description": "Copio waitlist landing page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "author": "James Han",
+  "license": "PROPRIETARY"
+}

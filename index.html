@@ -245,34 +245,39 @@
     </footer>
 
     <script>
-        // Simple form handling - stores to localStorage for now
-        // Replace with actual backend endpoint when ready
         const forms = document.querySelectorAll('form');
         forms.forEach(form => {
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const email = form.querySelector('input[type="email"]').value;
+                const emailInput = form.querySelector('input[type="email"]');
+                const button = form.querySelector('button');
+                const email = emailInput.value;
                 
-                // Store locally
-                const waitlist = JSON.parse(localStorage.getItem('copio_waitlist') || '[]');
-                if (!waitlist.includes(email)) {
-                    waitlist.push(email);
-                    localStorage.setItem('copio_waitlist', JSON.stringify(waitlist));
+                button.textContent = 'Joining...';
+                button.disabled = true;
+                
+                try {
+                    const res = await fetch('/api/waitlist', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email })
+                    });
+                    const data = await res.json();
+                    
+                    // Show success
+                    const msg = document.getElementById('form-message');
+                    if (msg) {
+                        msg.textContent = '🎉 You\'re on the list! We\'ll be in touch soon.';
+                        msg.classList.remove('hidden');
+                    }
+                    
+                    emailInput.value = '';
+                    button.textContent = 'You\'re In! ✓';
+                } catch (err) {
+                    button.textContent = 'Try Again';
+                    button.disabled = false;
+                    console.error('Waitlist error:', err);
                 }
-                
-                // Show success message
-                const msg = document.getElementById('form-message');
-                if (msg) {
-                    msg.textContent = '🎉 You\'re on the list! We\'ll be in touch soon.';
-                    msg.classList.remove('hidden');
-                }
-                
-                form.querySelector('input[type="email"]').value = '';
-                form.querySelector('button').textContent = 'You\'re In! ✓';
-                form.querySelector('button').disabled = true;
-                
-                // TODO: Send to backend
-                // await fetch('/api/waitlist', { method: 'POST', body: JSON.stringify({ email }) });
             });
         });
     </script>
