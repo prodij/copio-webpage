@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copio — Real-time Inventory Sync for Multi-Channel Sellers</title>
+    <meta name="description" content="Stop overselling on Amazon. Stop stockouts on Shopify. Sync your inventory in seconds, not hours.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .accent-gradient { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-white">
+    <!-- Hero Section -->
+    <section class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+        <div class="text-center">
+            <!-- Logo/Brand -->
+            <div class="mb-8">
+                <span class="text-3xl font-bold">📦 Copio</span>
+            </div>
+            
+            <!-- Headline -->
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Real-time inventory sync<br>
+                <span class="text-blue-400">for multi-channel sellers</span>
+            </h1>
+            
+            <!-- Subheadline -->
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Stop overselling on Amazon. Stop stockouts on Shopify. 
+                Sync your inventory in seconds, not hours.
+            </p>
+            
+            <!-- Waitlist Form -->
+            <div class="max-w-md mx-auto mb-8">
+                <form id="waitlist-form" class="flex flex-col sm:flex-row gap-3">
+                    <input 
+                        type="email" 
+                        id="email" 
+                        placeholder="Enter your email" 
+                        required
+                        class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
+                    >
+                    <button 
+                        type="submit"
+                        class="accent-gradient px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition whitespace-nowrap"
+                    >
+                        Join Waitlist
+                    </button>
+                </form>
+                <p id="form-message" class="mt-3 text-sm text-green-400 hidden"></p>
+            </div>
+            
+            <!-- Social Proof -->
+            <p class="text-gray-400 text-sm">
+                Built by a 7-figure Amazon seller who needed this himself.
+            </p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="bg-slate-900/50 py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Your inventory is lying to you</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+                    <div class="text-4xl mb-4">😤</div>
+                    <h3 class="font-semibold text-lg mb-2">The Daily Nightmare</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Amazon says 47 units</li>
+                        <li>• Shopify says 52</li>
+                        <li>• Reality is somewhere in between</li>
+                        <li>• Your spreadsheet gave up weeks ago</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+                    <div class="text-4xl mb-4">💸</div>
+                    <h3 class="font-semibold text-lg mb-2">The Real Cost</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li>• Oversells → refunds & angry customers</li>
+                        <li>• Stockouts → lost sales & damaged rankings</li>
+                        <li>• Manual updates → 5-10 hrs/week wasted</li>
+                        <li>• Account risk → one bad week away</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4">Inventory sync that actually works</h2>
+            <p class="text-gray-400 text-center mb-12">Not batch sync every hour. Real-time.</p>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">Real-Time Sync</h3>
+                    <p class="text-gray-400 text-sm">When a sale happens on Amazon, Shopify knows immediately. Not in 15 minutes. Now.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🔌</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">2-Click Setup</h3>
+                    <p class="text-gray-400 text-sm">Connect Amazon. Connect Shopify. Done. No spreadsheet imports. No 3-week onboarding.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 accent-gradient rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">👁️</span>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2">One Dashboard</h3>
+                    <p class="text-gray-400 text-sm">See all your inventory in one place. Across all channels. With sync status you can trust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-slate-900/50 py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">How it works</h2>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">1</div>
+                    <h3 class="font-semibold mb-1">Connect</h3>
+                    <p class="text-gray-400 text-sm">Link your accounts<br>(2 minutes)</p>
+                </div>
+                
+                <div class="hidden md:block text-gray-600">→</div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">2</div>
+                    <h3 class="font-semibold mb-1">Map</h3>
+                    <p class="text-gray-400 text-sm">Match your SKUs<br>(auto-detected)</p>
+                </div>
+                
+                <div class="hidden md:block text-gray-600">→</div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">3</div>
+                    <h3 class="font-semibold mb-1">Sync</h3>
+                    <p class="text-gray-400 text-sm">Watch it work<br>(real-time)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Teaser -->
+    <section class="py-16">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Simple pricing for sellers, not enterprises</h2>
+            <p class="text-gray-300 mb-6">
+                Plans starting at <span class="text-2xl font-bold text-blue-400">$49/month</span>
+            </p>
+            <p class="text-gray-400 mb-8">
+                No per-SKU fees. No percentage of GMV. No surprises.<br>
+                <span class="text-blue-400 font-medium">Founding members get 50% off for life.</span>
+            </p>
+            
+            <!-- Second CTA -->
+            <a href="#" onclick="document.getElementById('email').focus(); return false;" 
+               class="inline-block accent-gradient px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition">
+                Join the Waitlist →
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-slate-900/50 py-16">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">FAQ</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+                    <h3 class="font-semibold mb-2">Why not just use Veeqo? It's free.</h3>
+                    <p class="text-gray-400">Veeqo is Amazon's tool — great if you're Amazon-only. But if Shopify matters to you, you need a tool that treats all channels equally.</p>
+                </div>
+                
+                <div class="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+                    <h3 class="font-semibold mb-2">How is this different from Sellbrite/Linnworks?</h3>
+                    <p class="text-gray-400">They sync every 15-60 minutes. We sync in real-time. They were built a decade ago. We're built with modern APIs from day one.</p>
+                </div>
+                
+                <div class="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+                    <h3 class="font-semibold mb-2">What channels do you support?</h3>
+                    <p class="text-gray-400">Launching with Amazon ↔ Shopify. Walmart, eBay, and TikTok Shop are on the roadmap.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Stop babysitting your inventory</h2>
+            <p class="text-gray-300 mb-8">
+                You have better things to do than reconcile spreadsheets at midnight.
+            </p>
+            
+            <div class="max-w-md mx-auto">
+                <form id="waitlist-form-bottom" class="flex flex-col sm:flex-row gap-3">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        required
+                        class="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
+                    >
+                    <button 
+                        type="submit"
+                        class="accent-gradient px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition whitespace-nowrap"
+                    >
+                        Join Waitlist
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-gray-400 text-sm">
+                © 2026 Copio. Built in California.
+            </div>
+            <div class="flex gap-6">
+                <a href="https://twitter.com/jameshandev" target="_blank" class="text-gray-400 hover:text-white transition">Twitter</a>
+                <a href="https://linkedin.com/in/jameshan" target="_blank" class="text-gray-400 hover:text-white transition">LinkedIn</a>
+                <a href="mailto:james@copio.io" class="text-gray-400 hover:text-white transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form handling - stores to localStorage for now
+        // Replace with actual backend endpoint when ready
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = form.querySelector('input[type="email"]').value;
+                
+                // Store locally
+                const waitlist = JSON.parse(localStorage.getItem('copio_waitlist') || '[]');
+                if (!waitlist.includes(email)) {
+                    waitlist.push(email);
+                    localStorage.setItem('copio_waitlist', JSON.stringify(waitlist));
+                }
+                
+                // Show success message
+                const msg = document.getElementById('form-message');
+                if (msg) {
+                    msg.textContent = '🎉 You\'re on the list! We\'ll be in touch soon.';
+                    msg.classList.remove('hidden');
+                }
+                
+                form.querySelector('input[type="email"]').value = '';
+                form.querySelector('button').textContent = 'You\'re In! ✓';
+                form.querySelector('button').disabled = true;
+                
+                // TODO: Send to backend
+                // await fetch('/api/waitlist', { method: 'POST', body: JSON.stringify({ email }) });
+            });
+        });
+    </script>
+</body>
+</html>
